@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Desafio.Views.User"
+    Title="{Binding Title}">
+
+    <ScrollView>
+        <StackLayout Orientation="Vertical" Spacing="20" WidthRequest="100" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="20,20,20,20">
+            <StackLayout>
+                <Label Text="Nome"/>
+                <Entry IsReadOnly="True" Text="{Binding Name}"/>
+                <Label Text="E-mail"/>
+                <Entry IsReadOnly="True" Text="{Binding Email}"/>
+                <Label Text="Usuário"/>
+                <Entry IsReadOnly="True" Text="{Binding Nickname}"/>
+            </StackLayout>
+            <StackLayout>
+                <Button Text="Sair" TextColor="White" BackgroundColor="Red" Command="{Binding LogoutCommand}"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>

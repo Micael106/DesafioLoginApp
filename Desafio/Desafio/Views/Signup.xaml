@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Desafio.Views.Signup"
+    Title="{Binding Title}">
+    <ScrollView>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="20,20,20,20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Entry  Grid.Row="0" Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Placeholder="Nome"
+                        Text="{Binding Name}"
+                        Keyboard="Text" />
+
+                <Entry  Grid.Row="1" Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Placeholder="E-mail"
+                        Text="{Binding Email}"
+                        Keyboard="Email" />
+
+                <Entry  Grid.Row="2" Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Placeholder="Usuário"
+                        Text="{Binding User}"
+                        Keyboard="Plain" />
+
+                <Entry  Grid.Row="3" Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Placeholder="Senha"
+                        Text="{Binding Password}"
+                        IsPassword="True" />
+
+                <Button Grid.Row="4" Grid.Column="0"
+                        Text="Entrar"
+                        BackgroundColor="Green"
+                        TextColor="White"
+                        Command="{Binding SignupUserCommand}"
+                        />
+
+                <Button Grid.Row="4" Grid.Column="1"
+                        Text="Cancelar"
+                        BackgroundColor="Red"
+                        TextColor="White"
+                        Command="{Binding GotoMainPageCommand}" />
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
+
+

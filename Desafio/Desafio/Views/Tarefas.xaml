@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Desafio.Views.Tarefas"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    prism:ViewModelLocator.AutowireViewModel="True">
+
+    <ContentPage.Content>
+
+        <StackLayout>
+            <ActivityIndicator
+                HeightRequest="50"
+                IsRunning="True"
+                IsVisible="{Binding Carregando}" />
+
+            <ListView
+                BackgroundColor="White"
+                HasUnevenRows="True"
+                ItemsSource="{Binding Tarefas}"
+                SeparatorColor="Black"
+                SeparatorVisibility="Default">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                                BackgroundColor="#750000"
+                                Orientation="Horizontal"
+                                VerticalOptions="CenterAndExpand">
+
+                                <BoxView BackgroundColor="White" WidthRequest="1" />
+                                <Label
+                                    Text="{Binding titulo}"
+                                    TextColor="White"
+                                    VerticalTextAlignment="Center" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    BackgroundColor="Transparent"
+                    Text="Titulo: "
+                    TextColor="Black"
+                    VerticalTextAlignment="Center" />
+                <Entry
+                    x:Name="tituloEntry"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center" />
+            </StackLayout>
+
+            <Button
+                BackgroundColor="#750000"
+                Command="{Binding AddTarefaCommand}"
+                CommandParameter="{Binding Source={x:Reference tituloEntry}, Path=Text}"
+                Text="Add Tarefa"
+                TextColor="White" />
+
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

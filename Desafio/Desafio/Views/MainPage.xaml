@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Desafio.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Title}">
+
+    <ScrollView>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="40,0,40,0">
+            <!--<Label Text="Welcome to Xamarin Forms and Prism!" />
+            <Button
+                BackgroundColor="#138086"
+                Command="{Binding GotoTarefasCommand}"
+                HeightRequest="48"
+                HorizontalOptions="FillAndExpand"
+                Text="Goto Tarefas" />-->
+        
+            <Frame
+                CornerRadius="100"
+                HeightRequest="200"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                Padding="0"
+                Margin="0,0,0,50"
+                IsClippedToBounds="True">
+                <Image
+                    Source="https://yt3.ggpht.com/a/AGF-l7-D6Fi7fnCGeWR66W3gyMIncActC__eqg-Ugw=s900-mo-c-c0xffffffff-rj-k-no"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+            </Frame>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Entry  Grid.Row="0" Grid.Column="0"
+                        Placeholder="Usuário"
+                        Keyboard="Plain"
+                        Text="{Binding Nickname} "/>
+                <Entry  Grid.Row="1" Grid.Column="0"
+                        Placeholder="Senha"
+                        IsPassword="True"
+                        Text="{Binding Password}" />
+                <Button Grid.Row="2" Grid.Column="0"
+                        Text="Entrar"
+                        BackgroundColor="MediumSlateBlue"
+                        TextColor="White"
+                        Command="{Binding LoginUserCommand}" />
+                <Button Grid.Row="3" Grid.Column="0"
+                        Text="Fazer Cadastro"
+                        Command="{Binding SignupCommand}" />
+            
+            </Grid>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
